@@ -1,2 +1,1 @@
-# thexd-vercel
-:)
+# vercel-testing
