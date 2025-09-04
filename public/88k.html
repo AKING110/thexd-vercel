@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FB Image Preview</title>
+
+  <!-- Open Graph (used by Facebook) -->
+  <meta property="og:title" content="Preview Image" />
+  <meta property="og:description" content="Previewing an image from CDN" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://example.com/preview.html" />
+  <meta property="og:image" content="https://cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+  <meta property="og:image:secure_url" content="https://cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Preview Image" />
+  <meta name="twitter:description" content="Previewing an image from CDN" />
+  <meta name="twitter:image:src" content="https://cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 2rem; background:#fafafa; color:#111; }
+    .wrap { max-width:900px; margin:0 auto; text-align:center; }
+    img.preview { max-width:100%; height:auto; border-radius:8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    small { color:#666; display:block; margin-top:0.5rem; word-break:break-all; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Facebook Image Preview</h1>
+    <p>Image loaded directly from the CDN URL below:</p>
+
+    <img class="preview" alt="Preview image" src="https://cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+
+    <small>Full image URL (for debugging):<br>
+      https://cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?…</small>
+  </div>
+</body>
+</html>
