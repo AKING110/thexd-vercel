@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Image Viewer – OG & Twitter Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Basic SEO -->
+  <link rel="canonical" href="https://example.com/image-viewer.html" />
+
+  <!-- Open Graph (Facebook, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shared Image" />
+  <meta property="og:description" content="Preview this image." />
+  <meta property="og:image" content="//cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+  <meta property="og:image:alt" content="Shared image preview" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shared Image" />
+  <meta name="twitter:description" content="Preview this image." />
+  <meta name="twitter:image" content="//cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+  <meta name="twitter:image:alt" content="Shared image preview" />
+
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, Arial, sans-serif; }
+    header { padding: 12px 16px; border-bottom: 1px solid #ddd; }
+    main { padding: 16px; display: grid; gap: 12px; }
+    .bar { display: flex; gap: 8px; align-items: center; }
+    input[type="url"] { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 10px; }
+    button { padding: 10px 14px; border: 0; border-radius: 10px; cursor: pointer; }
+    .viewer-wrap { display: grid; place-items: center; }
+    .viewer { max-width: min(100%, 1100px); max-height: 80vh; width: 100%; height: auto; border-radius: 12px; }
+    .hint { font-size: 12px; opacity: .7; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Image Viewer</strong>
+  </header>
+
+  <main>
+    <div class="bar">
+      <input id="imgUrl" type="url" placeholder="Paste image URL"
+             value="//cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1">
+      <button id="loadBtn">Load</button>
+      <button id="copyBtn" title="Copy URL">Copy</button>
+    </div>
+
+    <div class="viewer-wrap">
+      <img id="viewer" class="viewer" alt="Preview"
+           src="//cdn.fbsbx.com/v/t59.2708-21/543764867_1272489580791095_5675266905321551704_n.odd/IMG-20250610-WA0144.odd?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=2b0e22&amp;_nc_eui2=AeFtZzY0_CvlLMdfp2ZDXToA5x8yjHCmNEvnHzKMcKY0SzskJflXJaDcXSLohReONvrSqwJYY7OIRabG771BgMnr&amp;_nc_ohc=mMgRdhb6uX4Q7kNvwGM9aHA&amp;_nc_oc=Adm2d5j0RPXO4la3Ujr0rFXpbfvSzRUF1Vsb5hpENX1RqsrYxbP65A5rV--DHyOP1bbpYHxfgBIfaKtzO4HEE4EQ&amp;_nc_zt=7&amp;_nc_ht=cdn.fbsbx.com&amp;_nc_gid=B6bD6FsR3Kc-LO5yJVbYaA&amp;oh=03_Q7cD3QG7aCOHwzoRUuCSvAuWGRVQKuwiagImdNFEPsIC5INKxA&amp;oe=68BBB1E3&amp;dl=1" />
+    </div>
+
+    <p class="hint">
+      Tip: Social previews (Facebook/Twitter) read the meta tags in the &lt;head&gt; at page load.
+      Changing the image via JavaScript won’t update how shared links look. For that, update the HTML
+      (server-side) before sharing.
+    </p>
+  </main>
+
+  <script>
+    const input = document.getElementById('imgUrl');
+    const img = document.getElementById('viewer');
+    const loadBtn = document.getElementById('loadBtn');
+    const copyBtn = document.getElementById('copyBtn');
+
+    function setImage(u) {
+      // Normalize: convert any & to &amp; for attribute display safety
+      img.src = u;
+      // Update the address bar without reload (for bookmarking)
+      const url = new URL(window.location);
+      url.searchParams.set('img', u);
+      history.replaceState(null, '', url);
+    }
+
+    loadBtn.addEventListener('click', () => {
+      if (input.value.trim()) setImage(input.value.trim());
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(input.value.trim());
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => (copyBtn.textContent = 'Copy'), 1000);
+      } catch {}
+    });
+
+    // Allow ?img=... to prefill and load
+    const qImg = new URLSearchParams(location.search).get('img');
+    if (qImg) {
+      input.value = qImg;
+      setImage(qImg);
+    }
+  </script>
+</body>
+</html>
